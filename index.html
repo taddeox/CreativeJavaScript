@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Bill Gates is richer than you</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <header>
+        <h1>How much money has Bill Gates made while you've been on this page?</h1>
+        <h1 id="moneyText">$0<h1>
+    </header>
+
+    <body>
+        <img id="billPic" src="Bill.jpg" alt="Bill Gates" onclick="picClick()">
+    </body>
+
+    <script>
+    var money = 0;
+    var interval = window.setInterval(addMoney,87)
+
+    function addMoney()
+    {
+        money = money + 11.31;
+        var formatted = money.toLocaleString('en-US',{minimumFractionDigits:2});
+        document.getElementById("moneyText").innerHTML="$"+formatted;
+    }
+
+    var justBill = 1;
+    function picClick()
+    {
+        if(justBill == 1)
+        {
+            var im = document.getElementById("billPic").src="BillAndI.jpg";
+            justBill = 0;
+        }
+        else
+        {
+            document.getElementById("billPic").src="Bill.jpg";
+            justBill = 1;
+        }
+    }
+    </script>
+</html>
